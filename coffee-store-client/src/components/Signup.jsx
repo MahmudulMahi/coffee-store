@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "./providers/AuthProvider";
+import { Result } from "postcss";
 
 
 const Signup = () => {
@@ -12,6 +13,13 @@ const Signup = () => {
     const email=form.email.value
     const password=form.password.value
     console.log(email,password)
+    createUser(email,password)
+    .then(result =>{
+      console.log(result.user)
+    })
+    .catch(error => {
+      console.error(error)
+    })
   }
   return (
     <div className="hero min-h-screen bg-base-200">
