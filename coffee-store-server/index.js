@@ -79,7 +79,13 @@ async function run() {
   })
 
   app.patch('/user',async(req,res)=>{
-    
+    const user=req.body;
+    const filter ={email:user.email}
+    const updateDoc={
+      $set:{
+        lastLoggedAt:user.lastLoggedAt
+      }
+    }
   })
 
     app.delete('/coffee/:id', async(req,res)=>{
