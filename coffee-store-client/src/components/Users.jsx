@@ -29,7 +29,7 @@ const Users = () => {
         <th></th>
         <th>Email</th>
         <th>Created At</th>
-        <th>Action</th>
+        <th>Last Logged In</th>
       </tr>
     </thead>
     <tbody>
@@ -39,7 +39,7 @@ const Users = () => {
         <th>1</th>
         <td>{user.email}</td>
         <td>{user.createdAt}</td>
-        <td></td>
+        <td>{user.lastLoggedAt}</td>
         <td>
 
           <button onClick={() => handelDelete(user._id)} className="btn">X</button>

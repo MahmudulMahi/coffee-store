@@ -86,6 +86,8 @@ async function run() {
         lastLoggedAt:user.lastLoggedAt
       }
     }
+    const result=await userCollection.updateOne(filter,updateDoc)
+    res.send(result)
   })
 
     app.delete('/coffee/:id', async(req,res)=>{
